@@ -1,8 +1,9 @@
 import TodoInput from "./TodoInput";
 import now from "../utils/now";
 import useTasksStore from "../store/tasksStore";
+import "./Todo.css";
 
-const Hero = () => {
+function Hero() {
     const tasks = useTasksStore(state => state.tasks);
     let numberOfIncompleteTasks = 0;
     tasks.forEach(function(task) {

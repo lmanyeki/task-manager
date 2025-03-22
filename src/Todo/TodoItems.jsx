@@ -1,16 +1,23 @@
 import useTasksStore from "../store/tasksStore";
 import TodoItem from "./TodoItem";
+import "./Todo.css";
 
 function TodoItems() {
-    const tasks = useTasksStore(function(state) {
-        return state.tasks;
-    });
+    const tasks = useTasksStore((state) => state.tasks);
     
     return (
-    <section className="todo-items-container">
-        {
-        tasks.map((task) => <TodoItem title={tasks.title} description={task.description} complete={task.complete} key={task.id} id={task.id}/>)}
-    </section>
+        <section className="todo-items-container">
+            {tasks.map((task) => (
+                <TodoItem
+                    key={task.id}
+                    id={task.id}
+                    title={task.title}
+                    description={task.description}
+                    dueDate={task.dueDate}
+                    complete={task.complete}
+                />
+            ))}
+        </section>
     );
 }
 
