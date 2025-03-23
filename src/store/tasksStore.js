@@ -10,7 +10,7 @@ function tasksStore(set) {
                 return { tasks: [newTask, ...previousState.tasks] };
             });
         },
-
+        
         markComplete: function(taskId) {
             set(function(previousState) {
                 const updatedTasks = previousState.tasks.map(function(task) {
@@ -44,18 +44,7 @@ function tasksStore(set) {
                 });
                 return { tasks: remainingTasks };
             });
-        },
-
-        editTask: function(taskId, newTitle, newDescription, newDueDate) {
-            set(function(previousState) {
-                const updatedTasks = previousState.tasks.map(function(task) {
-                    if (task.id === taskId) {
-                        return { ...task, title: newTitle, description: newDescription, dueDate: newDueDate };
-                    }
-                    return task;
-                });
-                return { tasks: updatedTasks };
-            });
+        
         }
     };
 }

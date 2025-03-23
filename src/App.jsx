@@ -1,4 +1,3 @@
-// import React from 'react'
 import Hero from './Todo/Hero'
 import TodoItems from './Todo/TodoItems'
 import { ToastContainer } from "react-toastify";
